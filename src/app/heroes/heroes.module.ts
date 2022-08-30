@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { HeroeRoutingModule } from './heroe-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -28,6 +29,7 @@ import { ImgPipePipe } from './pipes/img-pipe.pipe';
     CommonModule,
     HeroeRoutingModule,
     FlexLayoutModule,
+    FormsModule,
     MaterialModule
   ]
 })
