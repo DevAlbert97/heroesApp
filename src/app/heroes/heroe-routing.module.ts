@@ -17,7 +17,7 @@ const routes: Routes = [
         component: AddHeroeComponent
       },
       {
-        path: 'editar:id',
+        path: 'editar/:id',
         component: AddHeroeComponent
       },
       {
