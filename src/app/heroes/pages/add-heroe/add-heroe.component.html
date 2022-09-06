@@ -1,1 +1,56 @@
-<p>add-heroe works!</p>
+<h1> 
+  {{(heroe.id) ? 'Editar' : 'Nuevo'}}
+  Heroe 
+  <small>heroe</small></h1>
+
+<div fxLayout="row" fxLayoutGap="40px" fxLayout.lt-md="column" class="container">
+
+    <div fxFlex.lg="50" fxFlex.gt-lg="50" class="imgContainer">
+        <img [src]="heroe | imgPipe" alt="">
+    </div>
+
+    <div fxFlex.lg="50" fxLayout="column" fxFlex.gt-lg="50">
+
+        <div fxLayout="row" fxLayoutGap="20px">
+          <mat-form-field fxFlex.gt-lg="50">
+            <mat-label>Super Heroe</mat-label>
+            <input type="text" matInput required [(ngModel)]="heroe.superhero">
+          </mat-form-field>
+          <mat-form-field fxFlex.gt-lg="50">
+            <mat-label>Alter Ego</mat-label>
+            <input type="text" matInput required [(ngModel)]="heroe.alter_ego">
+          </mat-form-field>
+        </div>
+        <mat-form-field>
+          <mat-label>Primera Aparicion</mat-label>
+          <input type="text" matInput required [(ngModel)]="heroe.first_appearance">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Personajes</mat-label>
+          <input type="text" matInput required [(ngModel)]="heroe.characters">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Creador</mat-label>
+          <mat-select required [(ngModel)]="heroe.publisher">
+            <mat-option *ngFor="let publisher of publishers" [value]="publisher.id">{{publisher.desc}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Foto Url</mat-label>
+          <input type="url" matInput required [(ngModel)]="heroe.alt_img">
+        </mat-form-field>
+        <br>
+        <div fxLayout>
+          <button mat-raised-button color="primary" (click)="save()">
+            <mat-icon>edit</mat-icon>
+            {{(heroe.id) ? 'Actualizar' : 'Crear'}}
+          </button>
+          <span class="spacer"></span>
+          <button mat-raised-button color="warn" (click)="delete()" *ngIf="heroe.id">
+            <mat-icon>delete</mat-icon>
+            Borrar
+          </button>
+        </div>
+    </div>
+
+</div>

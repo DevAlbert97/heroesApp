@@ -12,6 +12,7 @@ import { ListHeroesComponent } from './pages/list-heroes/list-heroes.component';
 import { MaterialModule } from '../material/material.module';
 import { HeroeCardComponent } from './components/heroe-card/heroe-card.component';
 import { ImgPipePipe } from './pipes/img-pipe.pipe';
+import { ConfirmComponent } from './components/confirm/confirm.component';
 
 
 
@@ -23,7 +24,8 @@ import { ImgPipePipe } from './pipes/img-pipe.pipe';
     HomeComponent,
     ListHeroesComponent,
     HeroeCardComponent,
-    ImgPipePipe
+    ImgPipePipe,
+    ConfirmComponent
   ],
   imports: [
     CommonModule,
